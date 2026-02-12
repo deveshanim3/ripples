@@ -1,16 +1,51 @@
-# React + Vite
+# Recursive Grid (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **3×3 interactive grid** built in React.  
+Each cell starts at **0** and updates based on click + ripple rules.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
 
-## React Compiler
+👉 **Vercel Link:** https://ripples-psi.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **3×3 grid** centered on screen
+- **Even numbers:** light gray (`#e0e0e0`)
+- **Odd numbers:** navy (`#1a237e`) with white text
+- Rounded corners + shadow styling
+
+### Click interaction
+- Clicking a box increments its value by **+1**
+
+### Ripple rules
+- If the new value is divisible by **3**, the box to the **right** is decremented by **-1**
+- If the new value is divisible by **5**, the box **below** is incremented by **+2**
+
+### Locked state
+- If a box reaches **15 or higher**, it turns **red**
+- Locked boxes cannot be clicked
+- Locked boxes cannot be modified by ripple updates
+
+- **Reset button** to restart the grid
+
+---
+
+## Tech Stack
+
+- React (Vite)
+- TailwindCSS
+- Deployed on Vercel
+
+---
+
+## How to Run Locally
+
+```bash
+git clone https://github.com/deveshanim3/ripples
+cd ripples
+npm install
+npm run dev

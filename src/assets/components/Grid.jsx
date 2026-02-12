@@ -1,8 +1,13 @@
-import React, { use, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import Box from './Box'
 
 const Grid = () => {
     const [grid,setGrid]=useState(Array(9).fill(0))
+    
+    const handleReset=()=>{
+          setGrid(Array(9).fill(0))
+    }
+   
     const handleClick=(i)=>{
         setGrid(prev=>{
             if(prev[i]>=15)return prev;
@@ -17,7 +22,7 @@ const Grid = () => {
                 if(col<2){
                     const rightIdx=i+1
                     if(prev[rightIdx]<15){
-                        next[rightIdx]+=1
+                        next[rightIdx]-=1
                     }
                 }
             }
@@ -33,6 +38,8 @@ const Grid = () => {
         })
     }
     return (
+        <div className='flex justify-center items-center flex-col gap-4'>
+        <button onClick={handleReset} className='px-4 py-2 bg-blue-700 text-white rounded-md cursor-pointer'>Reset</button>
         <div className='grid grid-cols-3 grid-rows-3 gap-2'>
             {
                 grid.map((value,idx)=>{
@@ -41,6 +48,7 @@ const Grid = () => {
                             )
                         })
             }
+        </div>
         </div>
     )
 }
