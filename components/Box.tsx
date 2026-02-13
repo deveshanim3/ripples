@@ -14,7 +14,8 @@ const Box:React.FC<BoxProps>= ({ value,onClick}) => {
     return (
         <button onClick={onClick} disabled={locked} className={`h-25 w-25 border-2 border-black shadow-[2px 2px 0 black] rounded-[4px] flex justify-center items-center font-semibold text-2xl select-none
              ${background}
-             ${locked?"cursor-not-allowed":"cursor-pointer"}`}>{value}</button>
+             ${locked?"cursor-not-allowed":"cursor-pointer "}
+             hover:scale-105 transition-transform`}>{value}</button>
     )
 }
 

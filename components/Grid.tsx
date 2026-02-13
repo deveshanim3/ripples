@@ -40,12 +40,12 @@ const Grid:React.FC= () => {
     }
     return (
         <div className='flex justify-center items-center flex-col gap-4'>
-        <button onClick={handleReset} className='px-4 py-2 bg-slate-800 text-white rounded-md cursor-pointer'>Reset</button>
+        <button onClick={handleReset} className='px-4 py-2 bg-red-600 text-white border-none outline-none shadow-[2px 2px 0 black]  rounded-md cursor-pointer hover:translate-y-1 hover:shadow-[0px 0px 0 black] transition-all'>Reset</button>
         <div className='grid grid-cols-3 grid-rows-3 gap-2'>
             {
                 grid.map((value,idx)=>{
                     return(
-                        <Box key={idx} value={value} onClick={()=>handleClick(idx)} />
+                        <Box key={idx} value={value} onClick={()=>handleClick(idx)}/>
                         )
                 })
             }
