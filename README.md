@@ -36,7 +36,7 @@ Each cell starts at **0** and updates based on click + ripple rules.
 
 ## Tech Stack
 
-- React (Vite)
+- Next.js
 - TailwindCSS
 - Deployed on Vercel
 
